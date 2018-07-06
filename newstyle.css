@@ -1,0 +1,23 @@
+div {
+	border: 2px solid red;
+}
+
+.headlineContainer {
+	height: 175px;
+}
+/*Body*/
+.bodyOfStuff {
+	display: flex;
+	height: 300px;
+}
+.choices {
+	width: 70%;
+
+}
+.scoreSheet {
+	width: 30%;
+}
+
+.whatsBeenChosen {
+	height: 150px;
+}
