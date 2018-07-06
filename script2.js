@@ -42,12 +42,10 @@ let usertracker = 0;
 function userSelection(pick) {
 	computerChoice = choices[Math.floor(Math.random() * choices.length)];
 	if (computerChoice.weakness.includes(pick)){
-		alert("USER WINS");
 		usertracker++;
+
 	} else if (computerChoice.name === pick) {
-		alert("STALEMATE. TRY AGAIN.");
 	} else {
-		alert("COMPUTER WINS");
 		comptracker++;
 	}
 	let userPoints = document.querySelector('#userScore').innerHTML = usertracker;
@@ -55,10 +53,9 @@ function userSelection(pick) {
 }
 
 function pickerPopOut() {
-	let userPickedMotion = document.querySelector('.userPoster')
-	let computerPickedMotion = document.querySelector('.computerPoster')
+	let word = "Rock";
 
-	userPickedMotion.style.innerHTML = "Hello World";
+	document.querySelector('.userText').innerHTML = word;
 }
 
 
@@ -66,6 +63,7 @@ function pickerPopOut() {
 let rockChoice = document.querySelector('#rock');
 rockChoice.addEventListener('click', function(){
 	userSelection(choices[0].name)
+
 	// usrChoice = document.body.setAttribute('style', 'background-image: url(images/rock.png)');
 });
 

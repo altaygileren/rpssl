@@ -13,7 +13,9 @@
 
     <div class="slideOut">
         <div class="userPoster"></div>
+        <div class="userText"></div>
         <div class="computerPoster"></div>
+        <div class="computerText"></div>
     </div>
 
 
@@ -46,8 +48,8 @@
     </div>
 
     <div class="picks">
-        <div class="userPick"></div>
-        <div class="computerPick"></div>
+        <div onclick="userHasPicked" class="userPick"></div>
+        <div onclick="userHasPicked" class="computerPick"></div>
     </div>
 
         <!-- <div class="lines"> -->
@@ -59,7 +61,7 @@
 
     <div id="userchoices" class="box">
             <div class="img__wrap">
-            <img onclick="clicker" class="img__img" id="rock" src="images/rock.png">
+            <img onclick="pickerPopOut();" class="img__img" id="rock" src="images/rock.png">
                 <p class="img__description">ROCK</p>
             </div>
             <div class="img__wrap">
@@ -94,9 +96,6 @@
         <span id="computerScore">0</span>
     </div>
 
-    <div class="duel">
-        <img class="img__img">
-    </div>
    
 <script type="text/javascript" src="script2.js"></script>
 </body>
