@@ -1,23 +1,48 @@
 div {
 	border: 2px solid red;
 }
-
+body {
+	text-transform: uppercase;
+}
+/*Headline*/
 .headlineContainer {
 	height: 175px;
 }
+
 /*Body*/
 .bodyOfStuff {
 	display: flex;
 	height: 300px;
 }
+
+/*User Choices Box*/
 .choices {
-	width: 70%;
-
+	width: 60%;
 }
+
+/*Score Board Section*/
 .scoreSheet {
-	width: 30%;
+	width: 40%;
+	float: left;
+	text-align: center;
+}
+.userScore {
+	float: left;
+	width: 50%;
+}
+.scoreHead {
+	font-family: 'Galada', cursive;
+	text-transform: capitalize;
+	font-size: 50px;
+}
+.userScore , .computerScore {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 210px;
+	text-align: right;
 }
 
+/*What has been Chosen*/
 .whatsBeenChosen {
 	height: 150px;
 }
+
