@@ -33,9 +33,9 @@ const choices = [
 
 
 let computerChoice;
-let rockValue = choices[0].name;
-let usertracker = 0;
+// let rockValue = choices[0].name;
 let comptracker = 0;
+let usertracker = 0;
 
 
 
@@ -54,6 +54,12 @@ function userSelection(pick) {
 	let computerPoints = document.querySelector('#computerScore').innerHTML = comptracker;
 }
 
+function pickerPopOut() {
+	let userPickedMotion = document.querySelector('.userPoster')
+	let computerPickedMotion = document.querySelector('.computerPoster')
+
+	userPickedMotion.style.innerHTML = "Hello World";
+}
 
 
 
@@ -61,8 +67,6 @@ let rockChoice = document.querySelector('#rock');
 rockChoice.addEventListener('click', function(){
 	userSelection(choices[0].name)
 	// usrChoice = document.body.setAttribute('style', 'background-image: url(images/rock.png)');
-	let img = document.querySelector('.duelPic');
-	usrChoice = img.setAttribute('src', 'images/rock.png');
 });
 
 let paperChoice = document.querySelector('#paper');
@@ -84,7 +88,6 @@ let spockChoice = document.querySelector('#spock');
 spockChoice.addEventListener('click', function(){
 	userSelection(choices[4].name)
 });
-
 
 
 
