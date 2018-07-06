@@ -1,0 +1,357 @@
+/*RANDOM STUFF*/
+* {
+	padding: 0;
+	margin: 0;
+}
+
+
+html {
+  height: 100%;
+  /*background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);*/
+  overflow: hidden;
+  background-color: black;
+}
+
+
+/*GET RID OF THE DOTS ON THE SIDE OF THE LINKS*/
+ul {
+    list-style: none;
+}
+/*SIZE OF THE IMAGES*/
+img {
+    width: 60px;
+    height: auto;
+}
+
+/*SIZE OF THE IMAGES IN THE TOOL TIPS*/
+p img {
+    width: 40px;
+    height: auto;
+}
+.container {
+	text-align: center;
+	position: absolute;
+	transition: translate(-50%,-50%);
+	width: 100%;
+}
+.container span {
+	text-transform: uppercase;
+	display: inline;
+
+}
+#userchoices {
+	padding-left: 20px;
+	font-size: 70px;
+	left: 0;
+	position: absolute;
+	top: 430px;
+	line-height: 70px;
+    max-height: 0%;
+}
+
+#computerchoices{
+	padding-right: 20px;
+	font-size: 70px;
+	right: -1125px;
+	position: relative;
+	top: 430px;
+	line-height: 70px;
+}
+.headlinetext {
+	padding-top: 35px;
+	font-size: 40px;
+	letter-spacing: 8px;
+    color: white;
+	margin-bottom: 10px;
+	animation: text 3s 1;
+	font-family: 'Raleway', sans-serif;
+}
+
+
+
+/*TOOL TIPS*/
+.tooltip { display: inline-block; position:relative; z-index: 20; }
+.tooltip span { display: none; }
+.tooltip:hover {z-index: 21;}
+.tooltip:hover span {
+	display: block;
+	width: 100vw;
+	height: 120px;
+	padding: 5px;
+	color: white;
+	background-color: black;
+	position: absolute;
+	font-size: 15px;
+	text-align: center;
+	letter-spacing: 2px;
+}
+.tooltip p {
+    font-size: 50px;
+    text-align: center;
+}
+
+
+
+/*SCORES*/
+.scorekeep {
+    position: fixed;
+    display: inline;
+    font-family: 'Anton', sans-serif;
+    z-index: -1;
+    bottom: -400px;
+    left: 400px;
+}
+#userScore {
+    font-size:300px;
+    position: relative;
+    color: white;
+    left: 500px;
+    opacity: 0.2;
+    animation: scoresRoll 2s 1 forwards;
+}
+#computerScore {
+    font-size:300px;
+    position: relative;
+    color: white;
+    right: 400px;
+    opacity: 0.2; 
+    animation: scoresRoll 2s 1 forwards;
+}
+
+/*LINE DROPS*/
+.lineDrop {
+    width: 2px;
+    height: 80px;
+    /*background: white;*/
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    left: 290px;
+}
+.lineDrop2 {
+    width: 2px;
+    height: 80px;
+    /*background: white;*/
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    left: 473px;
+}
+.lineDrop3 {
+    width: 2px;
+    height: 80px;
+    /*background: white;*/
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    left: 715px;
+}
+.lineDrop4 {
+    width: 2px;
+    height: 80px;
+    /*background: white;*/
+    position: absolute;
+    -webkit-animation-direction: alternate; 
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;	
+    left: 923px;
+}
+/*DROP DOWN LINES*/
+@keyframes lineAnimation {
+    0%   {background: white; bottom: 950px;}
+    25%  {background: black; bottom: 950px;}
+    50%  {background: blue; bottom: 850px;}
+    75%  {background: green; bottom: 750px;}
+    100% {background: red; bottom: 600px;}
+  }
+
+
+
+/*TEXT VISIBILITY*/
+.img__wrap {
+  position: relative;
+}
+.img__description {
+  position: relative;
+  top: -90px;
+  bottom: 0;
+  left: 100px;
+  right: 0;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  transition: ease .4s, visibility .1s;
+}
+.img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+  letter-spacing: 20px;
+}
+
+
+
+
+/*USER CHOICE ANIMATION LINKS*/
+#rock{
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: firstUserChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+    left: -100px;
+}
+
+#paper{
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: firstUserChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+    left: -100px;
+}
+
+#scissor{
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: firstUserChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+    left: -100px;
+}
+
+#liz{
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: firstUserChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+    left: -100px;
+}
+
+#spock{
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: firstUserChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .8s;
+    animation-fill-mode: forwards;
+    left: -100px;
+}
+
+
+@keyframes firstUserChoice {
+    0% {left: -100px; bottom: 90px;}
+    100% {left: 18px; bottom: 90px;}
+}
+
+/*COMPUTER CHOICES*/
+#computerrock{
+    position: relative;
+    -webkit-animation-direction: alternate;
+    animation: firstComputerChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+    right: -500px;
+}
+#computerpaper{
+    position: relative;
+    -webkit-animation-direction: alternate;
+    animation: firstComputerChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .4s;
+    animation-fill-mode: forwards;
+    right: -500px;
+}
+#computerscissors{
+    position: relative;
+    -webkit-animation-direction: alternate;
+    animation: firstComputerChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+    right: -500px;
+}
+#computerlizard{
+    position: relative;
+    -webkit-animation-direction: alternate;
+    animation: firstComputerChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+    right: -500px;
+}
+#computerspock{
+    position: relative;
+    -webkit-animation-direction: alternate;
+    animation: firstComputerChoice .8s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: .8s;
+    animation-fill-mode: forwards;
+    right: -500px;
+}
+
+
+@keyframes firstComputerChoice {
+    0% {right: -400px; bottom: 90px;}
+    100% {right: -40px; bottom: 90px;}
+}
+/*SCORES ROLLOUT*/
+@keyframes scoresRoll {
+    0%{bottom: -400px;}
+    100%{bottom: 310px;}
+}
+
+
+
+
+
+/*HEADLINE TEXT*/
+@keyframes text {
+	0% {
+		margin-bottom: -40px;
+		font-size: 10px;
+	}
+	30% {
+		font-size: 15px;
+		letter-spacing: 25px;
+		margin-bottom: -40px
+	}
+	85% {
+		font-size: 20px;
+		letter-spacing: 8px;
+		margin-bottom: -40px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

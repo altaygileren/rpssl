@@ -1,0 +1,96 @@
+body {
+	/*background-color: black;*/
+}
+
+p {
+	color: white;
+	text-align: center;
+	padding-top: 40px;
+	font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+/*Getting Started Buttons*/
+.buttonSection {
+	padding-top: 400px;
+	text-align: center;
+}
+.button {
+	display: block;
+	text-align: center;
+	background-color: white;
+	font-size: 30px;
+	margin: auto;
+	margin-bottom: 20px;
+	font-family: 'Encode Sans Condensed', sans-serif;
+	letter-spacing: 0.3em;
+	text-indent: 0.3em;
+	border-radius: 20px;
+	vertical-align:middle;
+	box-shadow: 1px 10px 10px black;
+}
+.button:hover {
+	transition: 0.4s;
+	letter-spacing: 0.6em;
+	text-indent: 0.6em;
+	text-align: center;
+	border-radius: 10px;
+}
+
+a {
+	text-decoration:none;
+	color: black;
+}
+
+a:hover {
+	color: red;
+}
+
+
+
+/*Video Animation*/
+.videoPosition {
+	margin-left: 50px;
+}
+
+.videoLocation {
+  position: fixed;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-left: 289px;
+  animation: videoAnimation 1s 1 forwards;
+  animation-delay: 1.5s;
+  height: 0;
+  width: 0;
+}
+@keyframes videoAnimation {
+	0%{height: 0px; width: 0px;}
+	100%{height: 315px; width: 560px;}
+}
+
+
+
+
+
+/*Line Animation*/
+.lineAnimation {
+	height: 150px;
+	width: 560px;
+	background-color: yellow;
+	animation: lineDropStart 2s 1 forwards;
+	position: fixed;
+	top:-100%; right:-100%; left:-100%; bottom:-100%;
+	margin:auto;
+	z-index:0;
+	opacity: 60%;
+}
+@keyframes lineDropStart {
+	0% {height: 200px; width: 2px; background: red; bottom: 900px;}
+	60%{height: 200px; width: 2px; bottom: -400px;}
+	100%{height: 315px; width: 560; bottom: -400px;}
+}
+
+
+
+
+
+
