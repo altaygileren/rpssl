@@ -1,24 +1,75 @@
 div {
-	border: 2px solid red;
+	/*border: 2px solid red;*/
 }
 body {
 	text-transform: uppercase;
+	overflow: hidden;
 }
-/*Headline*/
+
+/*What's been Chosen*/
+.whatsBeenChosen {
+	display: flex;
+}
+.userBorder , .computerBorder {
+	background-color: yellow;
+	width: 50%;
+	height: 200px;
+}
+
+
+/*Animation When User Chooses*/
+.computerBorder {
+	background-color: blue;
+}
+
+
+/*Headline & Animation*/
 .headlineContainer {
-	height: 175px;
+	top: 50%;
+	left: 50%;
+	height: 80px;
 	font-family: 'Raleway', sans-serif;
-	font-size: 60px;
+	font-size: 30px;
+	width: 100%;
 }
-.headlineList li {
-	display:inline;
-	list-style: none;
+.headerText {
+	padding-top: 40px;
+	color: black;
+	animation: headlineAnimation 3s 1 forwards;
+	position: relative;
+	letter-spacing: 15px;
+	text-align: center;
+}
+@keyframes headlineAnimation {
+	0%{
+		font-size: 10px;
+		margin-bottom: -40px
+	}
+	30% {
+		letter-spacing: 25px;
+		margin-bottom: -40px;
+	}
+	85% {
+		letter-spacing: 8px;
+		margin-bottom: -40px
+	}
+
+}
+
+.headlineContainer span {
+	color: black;
+	display: block;
 }
 
 /*Body*/
 .bodyOfStuff {
 	display: flex;
-	height: 300px;
+	min-height: 100%;
+}
+
+.choices {
+	max-height: 200px;
+	padding-top: 10%;
 }
 
 /*Images*/
@@ -26,11 +77,16 @@ body {
 .imageChoices {
 	/*position: absolute;*/
 	width: 145px;
-	padding-top: 50px;
+	padding-top: 10px;
 	animation: slideIn .8s 1 forwards;
 	animation-direction: alternate;
 	animation-fill-mode: forwards;
 	left: -100px;
+}
+
+img.imageChoices:hover {
+	width: 190px;
+	transition: ease-in 0.2s;
 }
 
 
@@ -45,6 +101,7 @@ body {
 	display: flex;
 }
 
+
 /*Score Board Section*/
 .scoreSheet {
 	width: 40%;
@@ -54,26 +111,118 @@ body {
 .userScore {
 	float: left;
 	width: 50%;
+	animation: scoresFloat 3s 1 forwards;
+	position: relative;
+}
+.computerScore {
+	animation: computerFloat 2s 1 forwards;
+}
+@keyframes computerFloat {
+    0%   {left: 950px;}
+    25%  {left: 950px;}
+    50%  {left: 850px;}
+    75%  {left: 750px;}
+    100% {left: 20px;}
 }
 .scoreHead {
 	font-family: 'Galada', cursive;
 	text-transform: capitalize;
-	font-size: 50px;
+	font-size: 60px;
+	height: 60px;
+	position: relative;
 }
 .userScore , .computerScore {
 	font-family: 'Press Start 2P', cursive;
 	font-size: 210px;
 	text-align: right;
+	padding-top: 80px;
+	position: relative;
 }
+@keyframes scoresFloat {
+    0%   {top: 950px;}
+    25%  {top: 950px;}
+    50%  {top: 850px;}
+    75%  {top: 750px;}
+    100% {top: 20px;}
+}
+.lineBtwnScore {
+    width: 2px;
+    height: 200px;
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: scoreLine 2s 1 forwards;
+    animation-direction: alternate;
+    /*animation-delay: 1.5s;*/
+    animation-fill-mode: forwards;
+    right: 250px;
+    border-radius: 5px;
+}
+@keyframes scoreLine {
+    0%   {background: white; top: 950px;}
+    25%  {background: black; top: 950px;}
+    50%  {background: blue; top: 850px; width: 2px;}
+    75%  {background: green; top: 750px; width: 2px;}
+    90%  {top: 450px; width: 2px;}
+    100% {background: black; top: 450px; width: 10px;}
+}
+
 
 /*What has been Chosen*/
 .whatsBeenChosen {
-	height: 150px;
-}
-
-/*User Image Options*/
-.yourOptions {
-	float: left;
+	height: 200px;
 }
 
 
+/*Line Drop*/
+.lineDrop {
+    width: 2px;
+    height: 80px;
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    left: 255px;
+}
+.lineDrop2 {
+    width: 2px;
+    height: 80px;
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    left: 455px;
+}
+.lineDrop3 {
+    width: 2px;
+    height: 80px;
+    position: absolute;
+    -webkit-animation-direction: alternate;
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    left: 755px;
+}
+.lineDrop4 {
+    width: 2px;
+    height: 80px;
+    position: absolute;
+    -webkit-animation-direction: alternate; 
+    animation: lineAnimation 3s 1 forwards;
+    animation-direction: alternate;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;	
+    left: 955px;
+}
+/*DROP DOWN LINES*/
+@keyframes lineAnimation {
+    0%   {background: white; bottom: 950px;}
+    25%  {background: black; bottom: 950px;}
+    50%  {background: blue; bottom: 850px;}
+    75%  {background: green; bottom: 750px;}
+    100% {background: red; bottom: 600px;}
+  }
