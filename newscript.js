@@ -1,7 +1,6 @@
+// document.getElementById('rock').addEventListener('click', theFunction);
 
-
-
-function slideOut() {
-	document.querySelectorAll('userClickedChoice').className = 'slide';
-}
+// function theFunction(){
+// 	alert('hello');
+// }
 

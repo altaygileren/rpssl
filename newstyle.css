@@ -1,5 +1,5 @@
 div {
-	/*border: 2px solid red;*/
+	border: 2px solid red;
 }
 body {
 	text-transform: uppercase;
@@ -64,29 +64,47 @@ body {
 /*Body*/
 .bodyOfStuff {
 	display: flex;
-	min-height: 100%;
 }
 
 .choices {
-	max-height: 200px;
 	padding-top: 10%;
 }
 
 /*Images*/
 /*User Click Images*/
-.imageChoices {
-	/*position: absolute;*/
-	width: 145px;
-	padding-top: 10px;
-	animation: slideIn .8s 1 forwards;
+img.imageChoices {
+	height: 20%;
+	position: absolute;
+	/*padding-top: 10px;*/
+	animation: slideIn .5s 2 forwards;
 	animation-direction: alternate;
 	animation-fill-mode: forwards;
-	left: -100px;
+	left: -500px;
 }
-
+#rock {
+	animation: slideIn .9s 3 forwards;
+	left: 10px;
+}
+#paper {
+	animation: slideIn .8s 3 forwards;
+	left: 150px;
+}
+#scissor {
+	animation: slideIn .7s 3 forwards;
+	left: 290px;
+}
+#spock {
+	animation: slideIn 0.6s 3 forwards;
+	left: 430px;
+}
+#lizard {
+	animation: slideIn 0.5s 3 forwards;
+	left: 570px;
+}
 img.imageChoices:hover {
-	width: 190px;
+	height: 25%;
 	transition: ease-in 0.2s;
+	-webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
 }
 
 
@@ -118,11 +136,11 @@ img.imageChoices:hover {
 	animation: computerFloat 2s 1 forwards;
 }
 @keyframes computerFloat {
-    0%   {left: 950px;}
-    25%  {left: 950px;}
-    50%  {left: 850px;}
-    75%  {left: 750px;}
-    100% {left: 20px;}
+	0%   {left: 950px;}
+	25%  {left: 950px;}
+	50%  {left: 850px;}
+	75%  {left: 750px;}
+	100% {left: 20px;}
 }
 .scoreHead {
 	font-family: 'Galada', cursive;
@@ -139,33 +157,40 @@ img.imageChoices:hover {
 	position: relative;
 }
 @keyframes scoresFloat {
-    0%   {top: 950px;}
-    25%  {top: 950px;}
-    50%  {top: 850px;}
-    75%  {top: 750px;}
-    100% {top: 20px;}
+	0%   {top: 950px;}
+	25%  {top: 950px;}
+	50%  {top: 850px;}
+	75%  {top: 750px;}
+	100% {top: 20px;}
 }
 .lineBtwnScore {
-    width: 2px;
-    height: 200px;
-    position: absolute;
-    -webkit-animation-direction: alternate;
-    animation: scoreLine 2s 1 forwards;
-    animation-direction: alternate;
-    /*animation-delay: 1.5s;*/
-    animation-fill-mode: forwards;
-    right: 250px;
-    border-radius: 5px;
-}
-@keyframes scoreLine {
-    0%   {background: white; top: 950px;}
-    25%  {background: black; top: 950px;}
-    50%  {background: blue; top: 850px; width: 2px;}
-    75%  {background: green; top: 750px; width: 2px;}
-    90%  {top: 450px; width: 2px;}
-    100% {background: black; top: 450px; width: 10px;}
+	width: 2px;
+	height: 200px;
+	position: absolute;
+	-webkit-animation-direction: alternate;
+	animation: scoreLine 2s 1 forwards;
+	animation-direction: alternate;
+	/*animation-delay: 1.5s;*/
+	animation-fill-mode: forwards;
+	right: 250px;
+	border-radius: 5px;
 }
 
+.scoreHead > span {
+	position: relative;
+	animation: computerFloat 2s 1 forwards;
+	animation-delay: 0.1s;
+	animation-direction: alternate;
+}
+
+@keyframes scoreLine {
+	0%   {background: white; top: 950px;}
+	25%  {background: black; top: 950px;}
+	50%  {background: blue; top: 850px; width: 2px;}
+	75%  {background: green; top: 750px; width: 2px;}
+	90%  {top: 450px; width: 2px;}
+	100% {background: black; top: 450px; width: 10px;}
+}
 
 /*What has been Chosen*/
 .whatsBeenChosen {
@@ -175,54 +200,54 @@ img.imageChoices:hover {
 
 /*Line Drop*/
 .lineDrop {
-    width: 2px;
-    height: 80px;
-    position: absolute;
-    -webkit-animation-direction: alternate;
-    animation: lineAnimation 3s 1 forwards;
-    animation-direction: alternate;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    left: 255px;
+	width: 2px;
+	height: 80px;
+	position: absolute;
+	-webkit-animation-direction: alternate;
+	animation: lineAnimation 3s 1 forwards;
+	animation-direction: alternate;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+	left: 255px;
 }
 .lineDrop2 {
-    width: 2px;
-    height: 80px;
-    position: absolute;
-    -webkit-animation-direction: alternate;
-    animation: lineAnimation 3s 1 forwards;
-    animation-direction: alternate;
-    animation-delay: 1.5s;
-    animation-fill-mode: forwards;
-    left: 455px;
+	width: 2px;
+	height: 80px;
+	position: absolute;
+	-webkit-animation-direction: alternate;
+	animation: lineAnimation 3s 1 forwards;
+	animation-direction: alternate;
+	animation-delay: 1.5s;
+	animation-fill-mode: forwards;
+	left: 455px;
 }
 .lineDrop3 {
-    width: 2px;
-    height: 80px;
-    position: absolute;
-    -webkit-animation-direction: alternate;
-    animation: lineAnimation 3s 1 forwards;
-    animation-direction: alternate;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-    left: 755px;
+	width: 2px;
+	height: 80px;
+	position: absolute;
+	-webkit-animation-direction: alternate;
+	animation: lineAnimation 3s 1 forwards;
+	animation-direction: alternate;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+	left: 755px;
 }
 .lineDrop4 {
-    width: 2px;
-    height: 80px;
-    position: absolute;
-    -webkit-animation-direction: alternate; 
-    animation: lineAnimation 3s 1 forwards;
-    animation-direction: alternate;
-    animation-delay: 2.5s;
-    animation-fill-mode: forwards;	
-    left: 955px;
+	width: 2px;
+	height: 80px;
+	position: absolute;
+	-webkit-animation-direction: alternate; 
+	animation: lineAnimation 3s 1 forwards;
+	animation-direction: alternate;
+	animation-delay: 2.5s;
+	animation-fill-mode: forwards;	
+	left: 955px;
 }
 /*DROP DOWN LINES*/
 @keyframes lineAnimation {
-    0%   {background: white; bottom: 950px;}
-    25%  {background: black; bottom: 950px;}
-    50%  {background: blue; bottom: 850px;}
-    75%  {background: green; bottom: 750px;}
-    100% {background: red; bottom: 600px;}
-  }
+	0%   {background: white; bottom: 950px;}
+	25%  {background: black; bottom: 950px;}
+	50%  {background: blue; bottom: 850px;}
+	75%  {background: green; bottom: 750px;}
+	100% {background: red; bottom: 600px;}
+}
