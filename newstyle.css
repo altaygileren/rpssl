@@ -7,6 +7,12 @@ body {
 /*Headline*/
 .headlineContainer {
 	height: 175px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 60px;
+}
+.headlineList li {
+	display:inline;
+	list-style: none;
 }
 
 /*Body*/
@@ -15,9 +21,28 @@ body {
 	height: 300px;
 }
 
+/*Images*/
+/*User Click Images*/
+.imageChoices {
+	/*position: absolute;*/
+	width: 145px;
+	padding-top: 50px;
+	animation: slideIn .8s 1 forwards;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	left: -100px;
+}
+
+
+@keyframes slideIn {
+	0%{transform: translateX(-900px);}
+	100%{transform: translateX(0px);}
+}
+
 /*User Choices Box*/
 .choices {
 	width: 60%;
+	display: flex;
 }
 
 /*Score Board Section*/
@@ -45,4 +70,10 @@ body {
 .whatsBeenChosen {
 	height: 150px;
 }
+
+/*User Image Options*/
+.yourOptions {
+	float: left;
+}
+
 
