@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ROCK PAPER SCISSORS SPOCK LIZARD</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- Headline Font -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- Choices Emoji Fonts -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<!-- Scores Font -->
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<!-- Score Board Font -->
+	<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+	<!-- Headline Font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+		<div class="lineDrop"></div>
+  	<div class="lineDrop2"></div>
+  	<div class="lineDrop3"></div>
+  	<div class="lineDrop4"></div>
+	<div class="headlineContainer">
+		<span class="headerText">
+			<span class="tooltip">rock<span>
+				<p>Strength: Scissors | Lizard</p>
+				<hr>
+				<p>Weakness: Paper | Spock</p>
+		</span></span>
+			<span class="tooltip">paper<span>
+				<p>Strength: Rock | Spock</p>
+				<hr>
+				<p>Weakness: Scissors | Lizard</p>
+				</span></span>
+			<span class="tooltip">scissors<span>
+				<p>Strength: Paper | Lizard</p>
+				<hr>
+				<p>Weakness: Rock | Spock</p>
+			</span></span>
+			<span class="tooltip">spock<span>
+				<p>Strength: Scissors | Rock</p>
+				<hr>
+				<p>Weakness: Lizard | Paper</p>
+			</span></span>
+			<span class="tooltip">lizard<span>
+				<p>Strength: Spock | Paper</p>
+				<hr>
+				<p>Weakness: Scissors | Rock</p>
+			</span></span>
+	</div>
+
+	<div class="userChoices">
+		<ul>
+
+			<li class="clickedPick rock" id="rock">
+				<i class="far fa-hand-rock"></i>
+					<div class="slider">
+						<p>rock</p>
+					</div>
+			</li>
+
+			<li class="clickedPick paper" id="paper">
+				<i class="far fa-hand-paper"></i>
+					<div class="slider">
+						<p>paper</p>
+					</div>
+			</li>
+
+			<li class="clickedPick scissors" id="scissors">
+				<i class="far fa-hand-scissors"></i>
+					<div class="slider">
+						<p>scissors</p>
+					</div>
+			</li>
+
+			<li class="lizard" id="spock">
+				<i class="far fa-hand-spock"></i>
+					<div class="slider">
+						<p>spock</p>
+					</div>
+			</li>
+
+			<li class="spock" id="lizard">
+				<i class="far fa-hand-lizard"></i>
+					<div class="slider">
+						<p>lizard</p>
+					</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="userName">USER</div>
+	<div class="computerName">OPPONENT</div>
+
+	<div class="scoreBoard">
+		<div class="userScore">1</div><div class="lineScore"></div><div class="compScore">0</divs>
+	</div>
+<script src="brains.js"></script>
+</body>
+</html>
