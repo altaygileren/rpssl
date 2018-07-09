@@ -151,19 +151,19 @@ ul li .far {
 	transform: translate(-50%,-50%);
 }
 ul li.rock {
-	background-color: #6c67d7;
+	background-color: red;
 }
 ul li.paper {
-	background-color: orange;
+	background-color: blue;
 }
 ul li.scissors {
-	background-color: blue;
+	background-color: yellow;
 }
 ul li.spock {
 	background-color: green;
 }
 ul li.lizard {
-	background-color: coral;
+	background-color: orange;
 }
 .slider {
 	position: absolute;
@@ -185,19 +185,19 @@ ul li.lizard {
 	opacity: 0;
 }
 ul li.rock div.slider {
-	background-color: #d4d3f3;
+	background-color: #ffa8a8;
 }
 ul li.paper div.slider {
-	background-color: black;
+	background-color: #bab7ff;
 }
 ul li.scissors div.slider {
-	background-color: black;
+	background-color: #fffbb7;
 }
 ul li.spock div.slider {
-	background-color: black;
+	background-color: #b7ffbb;
 }
 ul li.lizard div.slider {
-	background-color: black;
+	background-color: #ffeab7;
 }
 ul li:hover .slider {
 	width: 230px;
@@ -206,7 +206,7 @@ ul li:hover .slider {
 ul li:hover .slider p {
 	opacity: 1;
 	color: black;
-	transition: all 0.2s ease;
+	transition: all 0.3s ease;
 }
 
 
@@ -227,7 +227,7 @@ ul li:hover .slider p {
 	font-family: 'Press Start 2P', cursive;
 }
 
-.userScore , .compScore {
+#userScore , #compScore {
 	padding: 15px;
 	margin: 20px;
 	left: 10px;
