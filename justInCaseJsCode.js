@@ -1,40 +1,14 @@
-const choices = [
-{
-	name: "rock",
-	strength: ["scissor", "lizard"],
-	weakness: ["paper", "spock"]
-},
-{
-	name: "paper",
-	strength: ["rock", "spock"],
-	weakness: ["scissor", "lizard"]
-},
-{
-	name: "scissor",
-	strength: ["paper", "lizard"],
-	weakness: ["rock", "spock"]
-},
-{
-	name: "lizard",
-	strength: ["spock", "paper"],
-	weakness: ["scissor", "rock"]
-},
-{
-	name: "spock",
-	strength: ["rock", "scissor"],
-	weakness: ["lizard", "paper"]
-}
-];
 
-// - User Picks choice by clicking image
-// - Computer randomly selects choice after user Picks
-// - If users choice weakness includes computer choice strengths then computer wins
-// otherwise the user wins
+// // - User Picks choice by clicking image
+// // - Computer randomly selects choice after user Picks
+// // - If users choice weakness includes computer choice strengths then computer wins
+// // otherwise the user wins
 
 
-let computerChoice;
-let comptracker = 0;
-let usertracker = 0;
+// let computerChoice;
+// // let rockValue = choices[0].name;
+// let comptracker = 0;
+// let usertracker = 0;
 
 
 
@@ -42,6 +16,7 @@ let usertracker = 0;
 // 	computerChoice = choices[Math.floor(Math.random() * choices.length)];
 // 	if (computerChoice.weakness.includes(pick)){
 // 		usertracker++;
+
 // 	} else if (computerChoice.name === pick) {
 // 	} else {
 // 		comptracker++;
@@ -56,17 +31,10 @@ let usertracker = 0;
 // 	document.querySelector('.userText').innerHTML = word;
 // 	document.querySelector('.userText').animation = animate
 // 	document.querySelector('.computerText').innerHTML = computerWord;
-
+// 	// document.querySelector('.computerText').animation 
 // }
 
 
-let clicker = document.getElementsByClassName('img__wrap');
-clicker.addEventListener('click', doSomething, false);
-
-function doSomething(e) {
-	let clicked = e.target.id;
-	alert('hello ' + clicked);
-}
 
 // let rockChoice = document.querySelector('#rock');
 // rockChoice.addEventListener('click', function(){
@@ -94,6 +62,3 @@ function doSomething(e) {
 // spockChoice.addEventListener('click', function(){
 // 	userSelection(choices[4].name)
 // });
-
-
-

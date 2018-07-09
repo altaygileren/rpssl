@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	color: white;
 	/*border: solid blue 2px;*/
 }
 
@@ -11,8 +12,8 @@ body {
 .headlineContainer {
 	top: 50%;
 	height: 80px;
-	font-family: 'Press Start 2P', cursive;
-	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
 	text-align: center;
 }
 .headerText {
@@ -106,18 +107,17 @@ body {
 .tooltip:hover {z-index: 21;}
 .tooltip:hover span {
 	display: block;
-	width: 300px;
-	height: 63px;
+	width: 275px;
+	height: 33px;
 	padding: 5px;
 	color: white;
 	background-color: black;
 	position: absolute;
 	letter-spacing: 2px;
-	box-shadow: 0 0 50px rgba(0,0,0,0.5);
 }
 .tooltip p {
 	text-align: left;
-	font-size: 9px;
+	font-size: 14px;
 }
 
 
@@ -127,33 +127,6 @@ body {
 	position: absolute;
 	top: 20%;
 	left: 1%;
-	color: white;
-}
-/*User Choices Slide Out*/
-#rock {
-	transform: translateX(-200%);
-	animation: userPickSlide 0.8s 1 forwards;
-}
-#paper {
-	transform: translateX(-200%);
-	animation: userPickSlide 1s 1 forwards;
-}
-#scissors {
-		transform: translateX(-200%);
-	animation: userPickSlide 1.2s 1 forwards;
-}
-#spock {
-	transform: translateX(-200%);
-	animation: userPickSlide 1.4s 1 forwards;
-}
-#lizard {
-	transform: translateX(-200%);
-	animation: userPickSlide 1.8s 1 forwards;
-}
-
-
-@keyframes userPickSlide {
-	100%{transform: translateX(0%);}
 }
 
 ul {
@@ -178,52 +151,53 @@ ul li .far {
 	transform: translate(-50%,-50%);
 }
 ul li.rock {
-	background-color: red;
+	background-color: #6c67d7;
 }
 ul li.paper {
-	background-color: blue;
+	background-color: orange;
 }
 ul li.scissors {
-	background-color: #ff1efb;
+	background-color: blue;
 }
 ul li.spock {
 	background-color: green;
 }
 ul li.lizard {
-	background-color: orange;
+	background-color: coral;
 }
 .slider {
 	position: absolute;
 	top: 0;
 	left: 100px;
-	font-family: 'Press Start 2P', cursive;
+	font-family: 'Ubuntu', sans-serif;
 	width: 0px;
 	height: 100px;
 	text-align: center;
 	line-height: 90px;
+	/*background-color: purple;*/
 	border-radius: 3px;
 	transition: all 0.5s 0.3s ease;
 }
 .slider p {
 	text-transform: uppercase;
-	font-size: 27px;
+	font-size: 50px;
 	transition: all 0.5s ease; 
 	opacity: 0;
 }
 ul li.rock div.slider {
-	background-color: #ffa8a8;
+	background-color: #d4d3f3;
 }
 ul li.paper div.slider {
-	background-color: #bab7ff;
+	background-color: black;
 }
 ul li.scissors div.slider {
-	background-color: #ffc6fe;
+	background-color: black;
 }
 ul li.spock div.slider {
-	background-color: #b7ffbb;
+	background-color: black;
 }
 ul li.lizard div.slider {
-	background-color: #ffeab7;
+	background-color: black;
 }
 ul li:hover .slider {
 	width: 230px;
@@ -232,7 +206,7 @@ ul li:hover .slider {
 ul li:hover .slider p {
 	opacity: 1;
 	color: black;
-	transition: all 0.3s ease;
+	transition: all 0.2s ease;
 }
 
 
@@ -251,13 +225,9 @@ ul li:hover .slider p {
 	height: 800px;
 	font-size: 200px;
 	font-family: 'Press Start 2P', cursive;
-	animation: scoreBoardSlide 0.8s 1 forwards;
-	transform: translateX(120%);
 }
-@keyframes scoreBoardSlide {
-	100%{transform: translateX(0%)};
-}
-#userScore , #compScore {
+
+.userScore , .compScore {
 	padding: 15px;
 	margin: 20px;
 	left: 10px;
@@ -270,19 +240,12 @@ ul li:hover .slider p {
 	border-radius: 10px;
 }
 
-
-
 .lineScore {
 	background-color: black;
 	width: 550px;
 	border-radius: 5px;
 	height: 2px;
 	position: absolute;
-	transform: translateX(120%);
-	animation: lineSlide 1s 1 forwards;
-}
-@keyframes lineSlide {
-	100%{transform: translateX(0%);};
 }
 
 .userName , .computerName{
@@ -295,77 +258,16 @@ ul li:hover .slider p {
 	text-align: center;
 	border-radius: 5px;
 	line-height: 1px;
-	color: white;
 }
 .userName {
+	/*width: 50px;*/
 	z-index: 1;
 	top: 178px;
 	right: 394px;
-	transform: translateX(1000%);
-	animation: nameSlide 1s 1 forwards;
-}
-
-@keyframes nameSlide {
-	98%{transform: translateX(5%);}
-	100%{transform: translateX(0%);}
 }
 
 .computerName {
 	z-index: 1;
 	top: 428px;
 	right: 394px;
-	transform: translateX(600%);
-	animation: nameSlide 1s 1 forwards;
 }
-
-
-
-
-
-/*LARGE CHOICES*/
-.whatWasPicked {
-	position: absolute;
-	/*border: 5px solid red;*/
-	height: 400px;
-	width: 420px;
-	top: 1px;
-	left: -500px;
-	color: blue;
-	z-index: 10;
-	font-size: 220px;
-	margin-top: 1px;
-	/*visibility: hidden;*/
-}
-
-
-
-
-
-
-
-
-
-
-
-#dialogoverlay{
-	display: none;
-	opacity: .8;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: #FFF;
-	width: 100%;
-	z-index: 10;
-}
-#dialogbox{
-	display: none;
-	position: fixed;
-	background: #000;
-	border-radius:7px; 
-	width:550px;
-	z-index: 10;
-}
-#dialogbox > div{ background:#FFF; margin:8px; }
-#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
-#dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
-#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }

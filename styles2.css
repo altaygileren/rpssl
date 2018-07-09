@@ -53,7 +53,7 @@ html {
 @keyframes chosenRollUser {
     100%{right: 0px;}
 }
-
+/*select divs, add event listener, then add animation to event listener from javascript and figure out reverse function*/
 
 
 
@@ -163,6 +163,20 @@ p img {
     margin-left: 400px;
     opacity: 0.2; 
     animation: scoresRoll 2s 1 forwards;
+}
+
+/*USER AND COMPUTER TEXT ROLL OUT*/
+.userText {
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  z-index: 100;
+  font-style: italic;
+}
+.computerText {
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  z-index: 100;
+  font-style: italic;
 }
 
 
@@ -284,7 +298,7 @@ p img {
     left: -100px;
 }
 
-#liz{
+#lizard{
     position: absolute;
     -webkit-animation-direction: alternate;
     animation: firstUserChoice .8s 1 forwards;
