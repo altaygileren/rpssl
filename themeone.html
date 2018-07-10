@@ -1,36 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rock Paper Scissors Spock Lizard</title>
-	<link rel="stylesheet" type="text/css" href="themeonestyles.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>Rock|Paper|Scissors|Lizard|Spock</title>
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
 </head>
-<body>	
-	<div class="overlay">
-
-		<div class="buttons">
-			<!-- <button id="explain" class="chooseButton" href="explanation.html">EXPLAIN GAME</button> -->
-
-			<form method="get" action="explanation.html">
-				<button id="explain" class="chooseButton" type="submit">EXPLAIN</button>
-			</form>
-			<button id="play" class="chooseButton">PLAY GAME</button>
-		</div>
+<body>
 
 
-		<div id="userClicked" class="compModal">
-			<div class="compModalContent">
-				<p id="quote">PLEASE CHOOSE A THEME</p>
-				<a href="themeone.html" id="fancy"><img class="smaller" src="images/fancy.png"></a>
-				<a href="themetwo.html" id="eightBit"><img class="smaller" src="images/eightbit.png"></a>
-			</div>
-		</div>
 
-	</div>
-	<script src="themeonejs.js"></script>
-</body>
-</html>
 
+    <div id="simpleModal" class="modal">
+        <div class="modalContent">
+            <p id="quote">WINNER WINNER CHICKEN DINNER</p>
+            <a href="index.html" class="resetButton">RESET</a>
+        </div>
+    </div>
+
+    <div id="compSimpleModal" class="compModal">
+        <div class="compModalContent">
+            <p id="quote">LOSER LOSER NYQUIL BOOZER</p>
+            <a href="index.html" class="resetButton">RESET</a>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="slideOut">
+        <div class="userPoster"></div>
+        <div class="userText"></div>
+        <div class="computerPoster"></div>
+        <div class="computerText"></div>
+    </div>
+
+
+    <div class="container">
+        <div class="headlinetext">
+            <span class="tooltip">ROCK<span>
+                <p>Strength: <img src="images/scissors.png"> | <img src="images/lizard.png"></p>
+                <hr>
+                <p>WEAKNESS: <img src="images/paper.png"> | <img src="images/spock.png"></p></span></span>
+                <span class="tooltip">PAPER<span>
+                    <p>Strength: <img src="images/rock.png"> | <img src="images/spock.png"></p>
+                    <hr>
+                    <p>Weakness: <img src="images/scissors.png"> | <img src="images/lizard.png"></p></span></span>
+                    <span class="tooltip">SCISSOR<span>
+                        <p>Strength: <img src="images/paper.png"> | <img src="images/lizard.png"></p>
+                        <hr>
+                        <p>Weakness: <img src="images/rock.png"> | <img src="images/spock.png"></p>
+                    </span></span>
+                    <span class="tooltip">LIZARD<span>
+                        <p id="noStyle">STRENGTH: <img src="images/spock.png"> | <img src="images/paper.png"></p>
+                        <hr>
+                        <p id="noStyle">WEAKNESS: <img src="images/scissors.png"> | <img src="images/rock.png"></p>
+                    </span></span>
+                    <span class="tooltip">SPOCK<span>
+                        <p id="noStyle">STRENGTH: <img src="images/scissors.png"> | <img src="images/rock.png"></p>
+                        <hr>
+                        <p id="noStyle">WEAKNESS: <img src="images/paper.png"> | <img src="images/lizard.png"></p>
+                    </span></span>
+                </div>
+            </div>
+
+            <div class="picks">
+                <div onclick="userHasPicked" class="userPick"></div>
+                <div onclick="userHasPicked" class="computerPick"></div>
+            </div>
+
+            <!-- <div class="lines"> -->
+                <div class="lineDrop"></div>
+                <div class="lineDrop2"></div>
+                <div class="lineDrop3"></div>
+                <div class="lineDrop4"></div>
+                <!-- </div> -->
+
+                <div id="userchoices" class="box">
+                    <div class="img__wrap">
+                        <img class="img__img" id="rock" src="images/rock.png">
+                        <p class="img__description">ROCK</p>
+                    </div>
+                    <div class="img__wrap">
+                        <img class="img__img" id="paper" src="images/paper.png">
+                        <p class="img__description">PAPER</p>
+                    </div>
+                    <div class="img__wrap">
+                        <img class="img__img" id="scissors" src="images/scissors.png">
+                        <p class="img__description">SCISSORS</p>
+                    </div>
+                    <div class="img__wrap">
+                        <img class="img__img" id="lizard" src="images/lizard.png">
+                        <p class="img__description">LIZARD</p>
+                    </div>
+                    <div class="img__wrap">
+                        <img class="img__img" id="spock" src="images/spock.png">
+                        <p class="img__description">SPOCK</p>
+                    </div>
+                </div>    
+                <div id="computerchoices">        
+                    <ul>
+                        <li><img class="img__img" id="computerrock" src="images/rock.png"></li>
+                        <li><img class="img__img" id="computerpaper" src="images/paper.png"></li>
+                        <li><img class="img__img" class="img__img" class="img__img" id="computerscissors" src="images/scissors.png"></li>
+                        <li><img class="img__img" class="img__img" id="computerlizard" src="images/lizard.png"></li>
+                        <li><img class="img__img" id="computerspock" src="images/spock.png"></li>
+                    </ul>
+                </div>
+
+                <div class="scorekeep">
+                    <span id="userScore">0</span>
+                    <span id="computerScore">0</span>
+                </div>
+
+                <div class='results'>
+                    <div class='userResults'></div>
+                    <div class='computerResults'></div>
+                </div>
+
+                <script type="text/javascript" src="script2.js"></script>
+            </body>
+            </html>
