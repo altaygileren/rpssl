@@ -7,7 +7,7 @@ body {
 
 p {
   padding: 10px 100px;
-  line-height: 40px;
+  line-height: 30px;
   text-align: left;
 }
 
@@ -68,4 +68,8 @@ p {
   font-size: 40px;
   text-transform: uppercase;
   box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+#hail {
+  text-align: center;
 }
