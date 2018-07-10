@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>ROCK PAPER SCISSORS SPOCK LIZARD</title>
-	<link rel="stylesheet" type="text/css" href="finalstyles.css">
+	<link rel="stylesheet" type="text/css" href="themetwostyles.css">
 	<!-- Headline Font -->
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	<!-- Choices Emoji Fonts -->
@@ -13,8 +13,27 @@
 	<link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
 	<!-- Headline Font -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<!-- Winner/Loser indicator -->
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:900" rel="stylesheet">
 </head>
 <body>
+
+
+	<div id="simpleModal" class="modal">
+		<div class="modalContent">
+			<p id="quote">WINNER WINNER CHICKEN DINNER</p>
+			<a href="themetwo.html" class="resetButton">RESET</a>
+		</div>
+	</div>
+
+	<div id="compSimpleModal" class="compModal">
+		<div class="compModalContent">
+			<p id="quote">LOSER LOSER NYQUIL BOOZER</p>
+			<a href="themetwo.html" class="resetButton">RESET</a>
+		</div>
+	</div>
+
+
 		<div class="lineDrop"></div>
   	<div class="lineDrop2"></div>
   	<div class="lineDrop3"></div>
@@ -23,27 +42,37 @@
 		<span class="headerText">
 			<span class="tooltip">rock<span>
 				<p>Strength: Scissors | Lizard</p>
+				<br />
 				<hr>
+				<br />
 				<p>Weakness: Paper | Spock</p>
 		</span></span>
 			<span class="tooltip">paper<span>
 				<p>Strength: Rock | Spock</p>
+				<br />
 				<hr>
+				<br />
 				<p>Weakness: Scissors | Lizard</p>
 				</span></span>
 			<span class="tooltip">scissors<span>
 				<p>Strength: Paper | Lizard</p>
+				<br />
 				<hr>
+				<br />
 				<p>Weakness: Rock | Spock</p>
 			</span></span>
 			<span class="tooltip">spock<span>
 				<p>Strength: Scissors | Rock</p>
+				<br />
 				<hr>
+				<br />
 				<p>Weakness: Lizard | Paper</p>
 			</span></span>
 			<span class="tooltip">lizard<span>
 				<p>Strength: Spock | Paper</p>
+				<br />
 				<hr>
+				<br />
 				<p>Weakness: Scissors | Rock</p>
 			</span></span>
 	</div>
@@ -51,21 +80,21 @@
 	<div class="userChoices">
 		<ul>
 
-			<li class="clickedPick rock" id="rock">
+			<li class="rock" id="rock">
 				<i class="far fa-hand-rock"></i>
 					<div class="slider">
 						<p>rock</p>
 					</div>
 			</li>
 
-			<li class="clickedPick paper" id="paper">
+			<li class="paper" id="paper">
 				<i class="far fa-hand-paper"></i>
 					<div class="slider">
 						<p>paper</p>
 					</div>
 			</li>
 
-			<li class="clickedPick scissors" id="scissors">
+			<li class="scissors" id="scissors">
 				<i class="far fa-hand-scissors"></i>
 					<div class="slider">
 						<p>scissors</p>
@@ -92,8 +121,13 @@
 	<div class="computerName">OPPONENT</div>
 
 	<div class="scoreBoard">
-		<div class="userScore">1</div><div class="lineScore"></div><div class="compScore">0</divs>
+		<div id="userScore">0</div><div class="lineScore"></div><div id="compScore">0</divs>
 	</div>
-<script src="finalbrains.js"></script>
+
+			<div class="whatWasPicked">
+		<div id="userLarge"></div>
+		<div id="computerLarge"></div>
+	</div>
+<script src="themetwojs.js"></script>
 </body>
 </html>
