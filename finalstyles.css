@@ -345,7 +345,7 @@ ul li:hover .slider p {
 .modal {
 	display: none;
 	position: fixed;
-	z-index: 50;
+	z-index: 101;
 	left: 0;
 	top: 0;
 	height: 100%;
@@ -368,11 +368,10 @@ ul li:hover .slider p {
 }
 
 
-/*Computer Modal*/
 .compModal {
 	display: none;
 	position: fixed;
-	z-index: 50;
+	z-index: 101;
 	left: 0;
 	top: 0;
 	height: 100%;
@@ -395,8 +394,16 @@ ul li:hover .slider p {
 }
 
 
-
-
+/*Modal Button*/
+.resetButton {
+	background-color: black;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
+	padding: 10px;
+	font-size: 15px;
+	text-align: center;
+	text-decoration: none;
+}
 
 
 

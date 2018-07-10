@@ -71,7 +71,8 @@ function game(userChoice) {
 			computerLarge.style.color = 'red';
 			setTimeout(userScoreUp(), 1000);
 		} else if (computerPick.name === userChoice) {
-			console.log("Stalemate");
+			userLarge.style.color = 'black';
+			computerLarge.style.color = 'black';
 		} else if (computerPick.strength.includes(userChoice)) {
 			userLarge.style.color = 'red';
 			computerLarge.style.color = 'green';

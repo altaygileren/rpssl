@@ -1,96 +1,77 @@
 body {
-	/*background-color: black;*/
+	background-image: url('https://media.giphy.com/media/swTbdYziUJ8u4/giphy.gif');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-color: black;
+	overflow: hidden;
 }
 
-p {
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0,0,0,0.8);
+	overflow: hidden;
+}
+
+.buttons {
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	padding-top: 200px;
+	font-size: 40px;
+}
+
+.chooseButton {
+	font-size: 20px;
+	height: 20%;
+	width: 20%;
+	background-color: black;
 	color: white;
-	text-align: center;
-	padding-top: 40px;
-	font-family: 'Encode Sans Condensed', sans-serif;
+	font-family: 'Press Start 2P', cursive;
+	padding: 10px 0;
 }
 
-/*Getting Started Buttons*/
-.buttonSection {
-	padding-top: 400px;
-	text-align: center;
+.smaller {
+	width: 40%;
+	height: 40%;
+	box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
-.button {
-	display: block;
-	text-align: center;
-	background-color: white;
-	font-size: 30px;
-	margin: auto;
-	margin-bottom: 20px;
-	font-family: 'Encode Sans Condensed', sans-serif;
-	letter-spacing: 0.3em;
-	text-indent: 0.3em;
-	border-radius: 20px;
-	vertical-align:middle;
-	box-shadow: 1px 10px 10px black;
-}
-.button:hover {
-	transition: 0.4s;
-	letter-spacing: 0.6em;
-	text-indent: 0.6em;
-	text-align: center;
-	border-radius: 10px;
-}
-
-a {
-	text-decoration:none;
-	color: black;
-}
-
-a:hover {
-	color: red;
-}
-
-
-
-/*Video Animation*/
-.videoPosition {
-	margin-left: 50px;
-}
-
-.videoLocation {
-  position: fixed;
-  margin: 0 auto;
-  margin-top: 35px;
-  margin-left: 289px;
-  animation: videoAnimation 1s 1 forwards;
-  animation-delay: 1.5s;
-  height: 0;
-  width: 0;
-}
-@keyframes videoAnimation {
-	0%{height: 0px; width: 0px;}
-	100%{height: 315px; width: 560px;}
+.smaller:hover {
+	width: 50%;
+	height: 50%;
+	transition: 0.5s ease;
 }
 
 
 
 
-
-/*Line Animation*/
-.lineAnimation {
-	height: 150px;
-	width: 560px;
-	background-color: yellow;
-	animation: lineDropStart 2s 1 forwards;
+.compModal {
+	display: none;
 	position: fixed;
-	top:-100%; right:-100%; left:-100%; bottom:-100%;
-	margin:auto;
-	z-index:0;
-	opacity: 60%;
-}
-@keyframes lineDropStart {
-	0% {height: 200px; width: 2px; background: red; bottom: 900px;}
-	60%{height: 200px; width: 2px; bottom: -400px;}
-	100%{height: 315px; width: 560; bottom: -400px;}
+	z-index: 50;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
 }
 
 
-
-
-
-
+.compModalContent {
+	top: 10px;
+	font-family: 'Press Start 2P', cursive;
+	background-color: rgba(255,255,255, 0.6);;
+	margin: 8% auto;
+	padding: 20px;
+	color: red;
+	width: 70%;
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+	box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}

@@ -109,9 +109,9 @@ p img {
 	font-size: 40px;
 	letter-spacing: 8px;
     color: white;
-	margin-bottom: 10px;
-	animation: text 3s 1;
-	font-family: 'Raleway', sans-serif;
+    margin-bottom: 10px;
+    animation: text 3s 1;
+    font-family: 'Raleway', sans-serif;
 }
 
 
@@ -191,7 +191,7 @@ p img {
     animation-direction: alternate;
     animation-delay: 1s;
     animation-fill-mode: forwards;
-    left: 290px;
+    left: 305px;
 }
 .lineDrop2 {
     width: 2px;
@@ -203,7 +203,7 @@ p img {
     animation-direction: alternate;
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
-    left: 473px;
+    left: 488px;
 }
 .lineDrop3 {
     width: 2px;
@@ -215,7 +215,7 @@ p img {
     animation-direction: alternate;
     animation-delay: 2s;
     animation-fill-mode: forwards;
-    left: 715px;
+    left: 730px;
 }
 .lineDrop4 {
     width: 2px;
@@ -227,7 +227,7 @@ p img {
     animation-direction: alternate;
     animation-delay: 2.5s;
     animation-fill-mode: forwards;	
-    left: 923px;
+    left: 938px;
 }
 /*DROP DOWN LINES*/
 @keyframes lineAnimation {
@@ -236,7 +236,7 @@ p img {
     50%  {background: blue; bottom: 850px;}
     75%  {background: green; bottom: 750px;}
     100% {background: red; bottom: 600px;}
-  }
+}
 
 
 
@@ -244,6 +244,10 @@ p img {
 .img__wrap {
   position: relative;
 }
+.img__img {
+    cursor: pointer;
+}
+
 .img__description {
   position: relative;
   top: -90px;
@@ -288,7 +292,7 @@ p img {
     left: -100px;
 }
 
-#scissor{
+#scissors{
     position: absolute;
     -webkit-animation-direction: alternate;
     animation: firstUserChoice .8s 1 forwards;
@@ -383,9 +387,6 @@ p img {
 }
 
 
-
-
-
 /*HEADLINE TEXT*/
 @keyframes text {
 	0% {
@@ -407,6 +408,96 @@ p img {
 
 
 
+
+.userResults {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    letter-spacing: 5px;
+}
+.computerResults {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 250px;
+    right: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    letter-spacing: 5px;  
+}
+
+
+
+
+
+
+/*MODAL WINDOW*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.modalContent {
+    background-color: #b7ffb7;
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+
+.compModal {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+.compModalContent {
+    background-color: #ffb7b7;
+    margin: 20% auto;
+    padding: 20px;
+    width: 70%;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+
+/*Modal Button*/
+.resetButton {
+    background-color: black;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+}
 
 
 

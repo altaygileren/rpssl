@@ -1,99 +1,115 @@
-const choices = [
-{
-	name: "rock",
-	strength: ["scissor", "lizard"],
-	weakness: ["paper", "spock"]
-},
-{
-	name: "paper",
-	strength: ["rock", "spock"],
-	weakness: ["scissor", "lizard"]
-},
-{
-	name: "scissor",
-	strength: ["paper", "lizard"],
-	weakness: ["rock", "spock"]
-},
-{
-	name: "lizard",
-	strength: ["spock", "paper"],
-	weakness: ["scissor", "rock"]
-},
-{
-	name: "spock",
-	strength: ["rock", "scissor"],
-	weakness: ["lizard", "paper"]
-}
-];
-
-// - User Picks choice by clicking image
-// - Computer randomly selects choice after user Picks
-// - If users choice weakness includes computer choice strengths then computer wins
-// otherwise the user wins
+let userPoints = 0;
+let computerPoints = 0;
+let userScore = document.getElementById('userScore');
+let computerScore = document.getElementById('computerScore');
+let rockChoice = document.getElementById('rock');
+let paperChoice = document.getElementById('paper');
+let scissorChoice = document.getElementById('scissors');
+let lizardChoice = document.getElementById('lizard');
+let spockChoice = document.getElementById('spock');
+let winningScore = 5;
 
 
-let computerChoice;
-let comptracker = 0;
-let usertracker = 0;
+function computerChoice() {
+	const choices = [
+	{
+		name: "rock",
+		strength: ["scissors", "lizard"],
+		weakness: ["paper", "spock"]
+	},
+	{
+		name: "paper",
+		strength: ["rock", "spock"],
+		weakness: ["scissors", "lizard"]
+	},
+	{
+		name: "scissors",
+		strength: ["paper", "lizard"],
+		weakness: ["rock", "spock"]
+	},
+	{
+		name: "lizard",
+		strength: ["spock", "paper"],
+		weakness: ["scissors", "rock"]
+	},
+	{
+		name: "spock",
+		strength: ["rock", "scissors"],
+		weakness: ["lizard", "paper"]
+	}
+	];
 
-
-
-// function userSelection(pick) {
-// 	computerChoice = choices[Math.floor(Math.random() * choices.length)];
-// 	if (computerChoice.weakness.includes(pick)){
-// 		usertracker++;
-// 	} else if (computerChoice.name === pick) {
-// 	} else {
-// 		comptracker++;
-// 	}
-// 	let userPoints = document.querySelector('#userScore').innerHTML = usertracker;
-// 	let computerPoints = document.querySelector('#computerScore').innerHTML = comptracker;
-// }
-
-// function pickerPopOut() {
-// 	let word = "Rock"
-// 	let animate = "ease-in 2s, visibility .1s;"
-// 	document.querySelector('.userText').innerHTML = word;
-// 	document.querySelector('.userText').animation = animate
-// 	document.querySelector('.computerText').innerHTML = computerWord;
-
-// }
-
-
-let clicker = document.getElementsByClassName('img__wrap');
-clicker.addEventListener('click', doSomething, false);
-
-function doSomething(e) {
-	let clicked = e.target.id;
-	alert('hello ' + clicked);
+	let randomNumber = Math.floor(Math.random() * choices.length);
+	return choices[randomNumber];
 }
 
-// let rockChoice = document.querySelector('#rock');
-// rockChoice.addEventListener('click', function(){
-// 	userSelection(choices[0].name)
+function userScoreUp() {
+	userPoints++;
+	userScore.innerHTML = userPoints;
+}
 
-// 	// usrChoice = document.body.setAttribute('style', 'background-image: url(images/rock.png)');
-// });
-
-// let paperChoice = document.querySelector('#paper');
-// paperChoice.addEventListener('click', function(){
-// 	userSelection(choices[1].name)
-// });
-
-// let scissorChoice = document.querySelector('#scissor');
-// scissorChoice.addEventListener('click', function(){
-// 	userSelection(choices[2].name)
-// });
-
-// let lizardChoice = document.querySelector('#liz');
-// lizardChoice.addEventListener('click', function(){
-// 	userSelection(choices[3].name)
-// });
-
-// let spockChoice = document.querySelector('#spock');
-// spockChoice.addEventListener('click', function(){
-// 	userSelection(choices[4].name)
-// });
+function compScoreUp() {
+	computerPoints++;
+	computerScore.innerHTML = computerPoints;
+}
 
 
 
+function game(userChoice) {
+	let computerPick = computerChoice();
+	let computerPicked = document.querySelector('.computerResults');
+	computerPicked.innerHTML = `${computerPick.name.toUpperCase()}`;
+	let modalContent = document.querySelector('#simpleModal');
+	let compModalContent = document.querySelector('#compSimpleModal')
+
+
+	if (userPoints !== 5 || compPoints !== 5) {
+		if(computerPick.weakness.includes(userChoice)) {
+			setTimeout(userScoreUp(), 1000);
+		} else if (computerPick.name === userChoice) {
+			console.log('tie');
+		} else if (computerPick.strength.includes(userChoice)) {
+			compScoreUp()
+		}
+	}
+
+	if (userPoints === winningScore) {
+		modalContent.style.display = 'block';
+	} else if (computerPoints === winningScore) {
+		compModalContent.style.display = 'block';
+	}
+
+};
+
+
+
+
+function userClick() {
+	rockChoice.addEventListener('click', function() {
+		let pickedRock = document.querySelector('.userResults');
+		pickedRock.innerHTML = "ROCK";
+		game('rock');
+	});
+	paperChoice.addEventListener('click', function() {
+		let pickedPaper = document.querySelector('.userResults');
+		pickedPaper.innerHTML = "PAPER";
+		game('paper');
+	});
+	scissorChoice.addEventListener('click', function() {
+		let pickedScissor = document.querySelector('.userResults');
+		pickedScissor.innerHTML = "SCISSORS";
+		game('scissors');
+	});
+	lizardChoice.addEventListener('click', function() {
+		let pickedLizard = document.querySelector('.userResults');
+		pickedLizard.innerHTML = "LIZARD";
+		game('lizard');
+	});
+	spockChoice.addEventListener('click', function() {
+		let pickedLizard = document.querySelector('.userResults');
+		pickedLizard.innerHTML = "SPOCK";
+		game('spock');
+	});
+}
+
+userClick();
