@@ -8,63 +8,33 @@ let paperChoice = document.getElementById('paper');
 let scissorChoice = document.getElementById('scissors');
 let spockChoice = document.getElementById('spock');
 let lizardChoice = document.getElementById('lizard');
-
-
-function CustomAlert(){
-    this.render = function(dialog){
-        var winW = window.innerWidth;
-        var winH = window.innerHeight;
-        var dialogoverlay = document.getElementById('dialogoverlay');
-        var dialogbox = document.getElementById('dialogbox');
-        dialogoverlay.style.display = "block";
-        dialogoverlay.style.height = winH+"px";
-        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-        dialogbox.style.top = "100px";
-        dialogbox.style.display = "block";
-        document.getElementById('dialogboxhead').innerHTML = "User wins!";
-        document.getElementById('dialogboxbody').innerHTML = dialog;
-        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
-    }
-	this.ok = function(){
-		document.getElementById('dialogbox').style.display = "none";
-		document.getElementById('dialogoverlay').style.display = "none";
-	}
-}
-let Alert = new CustomAlert();
-
-
-
-
-
-
-
-
+const winningScore = 5;
 
 function computerChoice() {
 	const choices = [
 	{
 		name: "rock",
-		strength: ["scissor", "lizard"],
+		strength: ["scissors", "lizard"],
 		weakness: ["paper", "spock"]
 	},
 	{
 		name: "paper",
 		strength: ["rock", "spock"],
-		weakness: ["scissor", "lizard"]
+		weakness: ["scissors", "lizard"]
 	},
 	{
-		name: "scissor",
+		name: "scissors",
 		strength: ["paper", "lizard"],
 		weakness: ["rock", "spock"]
 	},
 	{
 		name: "lizard",
 		strength: ["spock", "paper"],
-		weakness: ["scissor", "rock"]
+		weakness: ["scissors", "rock"]
 	},
 	{
 		name: "spock",
-		strength: ["rock", "scissor"],
+		strength: ["rock", "scissors"],
 		weakness: ["lizard", "paper"]
 	}
 	];
@@ -73,25 +43,49 @@ function computerChoice() {
 	return choices[randomNumber];
 }
 
+function userScoreUp() {
+	userPoints++;
+	userScore.innerHTML = userPoints;
+}
+
+function compScoreUp() {
+	compPoints++;
+	compScore.innerHTML = compPoints;
+}
+
+
+
 function game(userChoice) {
 	const computerPick = computerChoice();
+	let computerLarge = document.getElementById('computerLarge');
+	let userLarge = document.getElementById('userLarge');
+	computerLarge.innerHTML = `<i class='far fa-hand-${computerPick.name}'></i>`
+	userLarge.innerHTML = `<i class='far fa-hand-${userChoice}'></i>`
+	let modalContent = document.querySelector('#simpleModal');
+	let compModalContent = document.querySelector('#compSimpleModal')
 
-	if(computerPick.weakness.includes(userChoice)) {
-		alert(computerPick.name + userChoice);
-		userPoints++;
-		userScore.innerHTML = userPoints;
-		
-		alert("User wins!");
-	} else if (computerPick.name === userChoice) {
-		alert(computerPick.name + userChoice);
-		alert("Stalemate");
-	} else {
-		compPoints++;
-		compScore.innerHTML = compPoints;
-		alert(computerPick.name + userChoice);
-		alert('Computer wins!');
+
+	if (userPoints !== 5 || compPoints !== 5) {
+		if(computerPick.weakness.includes(userChoice)) {
+			userLarge.style.color = 'green';
+			computerLarge.style.color = 'red';
+			setTimeout(userScoreUp(), 1000);
+		} else if (computerPick.name === userChoice) {
+			console.log("Stalemate");
+		} else if (computerPick.strength.includes(userChoice)) {
+			userLarge.style.color = 'red';
+			computerLarge.style.color = 'green';
+			setTimeout(compScoreUp(), 1000);
+		}
 	}
-}
+
+	if (userPoints === winningScore) {
+		modalContent.style.display = 'block';
+	} else if (compPoints === winningScore) {
+		compModalContent.style.display = 'block';
+	}
+
+};
 
 
 function userClick() {
@@ -102,7 +96,7 @@ function userClick() {
 		game('paper');
 	});
 	scissorChoice.addEventListener('click', function() {
-		game('scissor');
+		game('scissors');
 	});
 	spockChoice.addEventListener('click', function() {
 		game('spock');
